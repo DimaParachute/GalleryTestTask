@@ -10,6 +10,8 @@
 		30E7E02C1575FB1E9E9519F5 /* Pods_GalleryTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B09689978B3E5DF72CE6F5 /* Pods_GalleryTestTask.framework */; };
 		6F12BF5327F487BC00DBD438 /* NewViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F12BF5227F487BB00DBD438 /* NewViewController+Extensions.swift */; };
 		6F12BF5827F4888800DBD438 /* PopularViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F12BF5727F4888800DBD438 /* PopularViewController+Extensions.swift */; };
+		6F12BF5A27F4908D00DBD438 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F12BF5927F4908D00DBD438 /* DetailViewController.swift */; };
+		6F21377427F5968A0004C1BF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21377327F5968A0004C1BF /* Styles.swift */; };
 		6F4B81F927F1ADB600CE1EF0 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4B81F827F1ADB600CE1EF0 /* NetworkWorker.swift */; };
 		6F4B81FE27F1D02A00CE1EF0 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4B81FD27F1D02A00CE1EF0 /* ImageInfo.swift */; };
 		6F62BCAE27F30BC8002FB156 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F62BCAC27F30BC8002FB156 /* CollectionReusableView.swift */; };
@@ -33,6 +35,8 @@
 		29B09689978B3E5DF72CE6F5 /* Pods_GalleryTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalleryTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F12BF5227F487BB00DBD438 /* NewViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewViewController+Extensions.swift"; sourceTree = "<group>"; };
 		6F12BF5727F4888800DBD438 /* PopularViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopularViewController+Extensions.swift"; sourceTree = "<group>"; };
+		6F12BF5927F4908D00DBD438 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6F21377327F5968A0004C1BF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		6F4B81F827F1ADB600CE1EF0 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
 		6F4B81FD27F1D02A00CE1EF0 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 		6F62BCAC27F30BC8002FB156 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		6FF1936027EC74D9006E9A3F /* GalleryTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				6F21377327F5968A0004C1BF /* Styles.swift */,
 				6FF1937B27EC8EFB006E9A3F /* NetworkReachability.swift */,
 				6F12BF5427F4883500DBD438 /* Extensions */,
 				6FF1937827EC84CC006E9A3F /* Models */,
@@ -175,6 +180,7 @@
 		6FF1937727EC8454006E9A3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6F12BF5927F4908D00DBD438 /* DetailViewController.swift */,
 				6F4B81FB27F1ADDF00CE1EF0 /* New */,
 				6F62BCB027F31A4D002FB156 /* CollectionReusableView */,
 				6F4B81FC27F1ADE800CE1EF0 /* Popular */,
@@ -334,8 +340,10 @@
 				6FF1938027ECBB84006E9A3F /* NewCollectionViewCell.swift in Sources */,
 				6F12BF5827F4888800DBD438 /* PopularViewController+Extensions.swift in Sources */,
 				6FF1936227EC74D9006E9A3F /* AppDelegate.swift in Sources */,
+				6F21377427F5968A0004C1BF /* Styles.swift in Sources */,
 				6F12BF5327F487BC00DBD438 /* NewViewController+Extensions.swift in Sources */,
 				6FF1938227ECBCEF006E9A3F /* PopularCollectionViewCell.swift in Sources */,
+				6F12BF5A27F4908D00DBD438 /* DetailViewController.swift in Sources */,
 				6F4B81FE27F1D02A00CE1EF0 /* ImageInfo.swift in Sources */,
 				6FF1938A27EDA7B5006E9A3F /* DataModels.swift in Sources */,
 				6FF1936427EC74D9006E9A3F /* SceneDelegate.swift in Sources */,

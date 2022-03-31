@@ -11,6 +11,8 @@ class PopularViewController: UIViewController {
     
     @IBOutlet weak var popularCollectionView: UICollectionView!
     
+    lazy var detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    
     private var networkWorker = NetworkWorker()
     var imageInfo = ImageInfo.sharedInstance()
     var loadingView: CollectionReusableView?
@@ -47,6 +49,8 @@ class PopularViewController: UIViewController {
     }
     
     @objc private func onRefresh(sender: UIRefreshControl) {
+        imageInfo.popularImages = []
+        imageInfo.pageNumberForPopular = 1
         networkWorker.load(forVC: "popular",
                            url: Constants.url(pageNumber: imageInfo.pageNumberForPopular),
                            completion: self.updateUIAfterNetwork,

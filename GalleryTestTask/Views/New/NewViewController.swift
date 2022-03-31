@@ -11,6 +11,8 @@ class NewViewController: UIViewController {
     
     @IBOutlet weak var newCollectionView: UICollectionView!
     
+    lazy var detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    
     private var networkWorker = NetworkWorker()
     var imageInfo = ImageInfo.sharedInstance()
     var loadingView: CollectionReusableView?
@@ -47,6 +49,8 @@ class NewViewController: UIViewController {
     }
     
     @objc private func onRefresh(sender: UIRefreshControl) {
+        imageInfo.newImages = []
+        imageInfo.pageNumberForNew = 1
         networkWorker.load(forVC: "new",
                            url: Constants.url(pageNumber: imageInfo.pageNumberForNew),
                            completion: self.updateUIAfterNetwork,

@@ -13,6 +13,7 @@ class Images: Codable {
 
 struct DataModel: Codable {
     var name: String?
+    var description: String?
     var new: Bool?
     var popular: Bool?
     var image: ImageData?

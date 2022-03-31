@@ -15,6 +15,7 @@ extension NewViewController: UICollectionViewDataSource, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.newCellId, for: indexPath) as! NewCollectionViewCell
+        print(indexPath.row)
         cell.setupCell(imageUrl: URL(string: Constants.imageURL + (imageInfo.newImages[indexPath.row].image?.name ?? ""))!)
         return cell
     }
@@ -82,5 +83,12 @@ extension NewViewController: UICollectionViewDataSource, UICollectionViewDelegat
       ) -> CGFloat {
           return Constants.sectionInsets.left
       }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        detailViewController.imageUrl = URL(string: Constants.imageURL + (imageInfo.newImages[indexPath.row].image?.name ?? ""))
+        detailViewController.selectedTitle = imageInfo.newImages[indexPath.row].name
+        detailViewController.selectedDescription = imageInfo.newImages[indexPath.row].description
+        present(detailViewController, animated: true, completion: nil)
+    }
 }
 

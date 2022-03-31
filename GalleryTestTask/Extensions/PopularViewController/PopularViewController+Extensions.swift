@@ -82,4 +82,11 @@ extension PopularViewController: UICollectionViewDataSource, UICollectionViewDel
     ) -> CGFloat {
         return Constants.sectionInsets.left
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        detailViewController.imageUrl = URL(string: Constants.imageURL + (imageInfo.popularImages[indexPath.row].image?.name ?? ""))
+        detailViewController.selectedTitle = imageInfo.popularImages[indexPath.row].name
+        detailViewController.selectedDescription = imageInfo.popularImages[indexPath.row].description
+        present(detailViewController, animated: true, completion: nil)
+    }
 }
