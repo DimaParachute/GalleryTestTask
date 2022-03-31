@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopularViewController" customModule="GalleryTestTask" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PopularCollectionViewCell" customModule="GalleryTestTask" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhO-1T-L5g">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-Cx-2hn">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -43,7 +43,7 @@
                 <outlet property="cellImageView" destination="eD1-Cx-2hn" id="e7W-cy-l1H"/>
                 <outlet property="popularSubview" destination="ZhO-1T-L5g" id="0la-Qr-qjX"/>
             </connections>
-            <point key="canvasLocation" x="394.20289855072468" y="313.39285714285711"/>
+            <point key="canvasLocation" x="495.6521739130435" y="360.26785714285711"/>
         </view>
     </objects>
     <resources>

@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewViewController" customModule="GalleryTestTask" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NewCollectionViewCell" customModule="GalleryTestTask" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0m-kE-MNs">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="raz-vf-72y">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -43,7 +43,7 @@
                 <outlet property="cellImageView" destination="raz-vf-72y" id="QYA-ku-C8f"/>
                 <outlet property="newCellSubview" destination="M0m-kE-MNs" id="wPq-Dy-r1l"/>
             </connections>
-            <point key="canvasLocation" x="392.75362318840581" y="320.75892857142856"/>
+            <point key="canvasLocation" x="494.20289855072468" y="367.63392857142856"/>
         </view>
     </objects>
     <resources>

@@ -33,7 +33,6 @@ class PopularCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.removeFromSuperview()
     }
     
     public func setupCell(imageUrl: URL) -> Void {

@@ -51,11 +51,16 @@ class PopularViewController: UIViewController {
     @objc private func onRefresh(sender: UIRefreshControl) {
         imageInfo.popularImages = []
         imageInfo.pageNumberForPopular = 1
-        networkWorker.load(forVC: "popular",
-                           url: Constants.url(pageNumber: imageInfo.pageNumberForPopular),
-                           completion: self.updateUIAfterNetwork,
-                           completionIfNoInternet: self.updateUIAfterNetworkIfNoInternet)
-        sender.endRefreshing()
+        DispatchQueue.global().async {
+            sleep(1)
+            self.networkWorker.load(forVC: "popular",
+                                    url: Constants.url(pageNumber: self.imageInfo.pageNumberForPopular),
+                               completion: self.updateUIAfterNetwork,
+                               completionIfNoInternet: self.updateUIAfterNetworkIfNoInternet)
+            DispatchQueue.main.async {
+                sender.endRefreshing()
+            }
+        }
     }
     
     private func setupLoadingReusableView() -> Void {
@@ -67,8 +72,7 @@ class PopularViewController: UIViewController {
         if !self.isLoading {
             self.isLoading = true
             DispatchQueue.global().async {
-                sleep(2)
-                // Download more data here
+                sleep(1)
                 self.networkWorker.load(forVC: "popular",
                                         url: Constants.url(pageNumber: self.imageInfo.pageNumberForPopular),
                                         completion: self.updateUIAfterNetwork,
@@ -99,13 +103,17 @@ class PopularViewController: UIViewController {
         }
         
         static var itemsPerRow: CGFloat {
-            2
+            if UIDevice.current.orientation.isLandscape {
+                return 5
+            } else {
+                return 2
+            }
         }
         
         static var sectionInsets = UIEdgeInsets(
-          top: 50.0,
+          top: 20.0,
           left: 20.0,
-          bottom: 50.0,
+          bottom: 20.0,
           right: 20.0)
     }
 }

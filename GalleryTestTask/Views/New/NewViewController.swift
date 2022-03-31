@@ -38,6 +38,13 @@ class NewViewController: UIViewController {
         setupLoadingReusableView()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { (_) in
+            self.newCollectionView.collectionViewLayout.invalidateLayout()
+        }, completion: nil)
+    }
+    
     private func updateUIAfterNetwork() -> Void {
         newCollectionView.reloadData()
         imageInfo.pageNumberForNew += 1
@@ -51,11 +58,16 @@ class NewViewController: UIViewController {
     @objc private func onRefresh(sender: UIRefreshControl) {
         imageInfo.newImages = []
         imageInfo.pageNumberForNew = 1
-        networkWorker.load(forVC: "new",
-                           url: Constants.url(pageNumber: imageInfo.pageNumberForNew),
-                           completion: self.updateUIAfterNetwork,
-                           completionIfNoInternet: self.updateUIAfterNetworkIfNoInternet)
-        sender.endRefreshing()
+        DispatchQueue.global().async {
+            sleep(1)
+            self.networkWorker.load(forVC: "new",
+                                    url: Constants.url(pageNumber: self.imageInfo.pageNumberForNew),
+                               completion: self.updateUIAfterNetwork,
+                               completionIfNoInternet: self.updateUIAfterNetworkIfNoInternet)
+            DispatchQueue.main.async {
+                sender.endRefreshing()
+            }
+        }
     }
     
     private func setupLoadingReusableView() -> Void {
@@ -67,7 +79,7 @@ class NewViewController: UIViewController {
         if !self.isLoading {
             self.isLoading = true
             DispatchQueue.global().async {
-                sleep(2)
+                sleep(1)
                 self.networkWorker.load(forVC: "new",
                                         url: Constants.url(pageNumber: self.imageInfo.pageNumberForNew),
                                         completion: self.updateUIAfterNetwork,
@@ -98,15 +110,18 @@ class NewViewController: UIViewController {
         }
         
         static var itemsPerRow: CGFloat {
-            2
+            if UIDevice.current.orientation.isLandscape {
+                return 5
+            } else {
+                return 2
+            }
         }
         
         static var sectionInsets = UIEdgeInsets(
-          top: 50.0,
+          top: 20.0,
           left: 20.0,
-          bottom: 50.0,
+          bottom: 20.0,
           right: 20.0)
     }
-
 }
 

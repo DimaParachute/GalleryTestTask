@@ -15,7 +15,9 @@ extension PopularViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.popularCellId, for: indexPath) as! PopularCollectionViewCell
-        cell.setupCell(imageUrl: URL(string: Constants.imageURL + (imageInfo.popularImages[indexPath.row].image?.name ?? ""))!)
+        if indexPath.row >= imageInfo.popularImages.startIndex && indexPath.row <= imageInfo.popularImages.endIndex {
+            cell.setupCell(imageUrl: URL(string: Constants.imageURL + (imageInfo.popularImages[indexPath.row].image?.name ?? ""))!)
+        }
         return cell
     }
     
@@ -87,6 +89,6 @@ extension PopularViewController: UICollectionViewDataSource, UICollectionViewDel
         detailViewController.imageUrl = URL(string: Constants.imageURL + (imageInfo.popularImages[indexPath.row].image?.name ?? ""))
         detailViewController.selectedTitle = imageInfo.popularImages[indexPath.row].name
         detailViewController.selectedDescription = imageInfo.popularImages[indexPath.row].description
-        present(detailViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
