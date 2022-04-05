@@ -7,6 +7,8 @@
 
 import Foundation
 
+// codable decodable почитать.
+
 class Images: Codable {
     var data: [DataModel]?
 }
