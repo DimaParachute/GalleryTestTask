@@ -22,9 +22,9 @@ class ImagesPresenter: ImagesViewPresenter {
     enum Constants {
         static func url(state: ImagesPresenter.State, pageNumber: Int) -> URL {
             if state == State.new {
-                return URL(string: "http://gallery.dev.webant.ru/api/photos?new=true&page=\(String(pageNumber))&limit=10")!
+                return URL(string: "http://gallery.prod1.webant.ru/api/photos?new=true&page=\(String(pageNumber))&limit=10")!
             } else {
-                return URL(string: "http://gallery.dev.webant.ru/api/photos?popular=true&page=\(String(pageNumber))&limit=10")!
+                return URL(string: "http://gallery.prod1.webant.ru/api/photos?popular=true&page=\(String(pageNumber))&limit=10")!
             }
         }
     }

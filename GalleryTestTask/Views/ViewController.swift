@@ -32,7 +32,7 @@ class ViewController: UIViewController, MainViewProtocol {
         }
         
         static var imageURL: String {
-            "http://gallery.dev.webant.ru/media/"
+            "http://gallery.prod1.webant.ru/media/"
         }
     }
     
